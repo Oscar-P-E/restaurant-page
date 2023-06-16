@@ -1,1 +1,16 @@
 /* style.css */
+
+html {
+    background: url("./burger_wp.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    height: 100%;
+}
+
+body {
+    background: transparent;
+    height: 100%;
+    margin: 0;
+}
