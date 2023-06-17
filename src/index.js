@@ -1,43 +1,30 @@
 import "./style.css";
-import Burger from "./burger_wp.jpg";
-import { doc } from "prettier";
 
 const content = document.getElementById("content");
-const main = document.createElement("div");
-const nav = document.createElement("div");
 
-const home = document.createElement("div");
-const about = document.createElement("div");
-const menu = document.createElement("div");
-
-const homeLink = document.createElement("a");
-const aboutLink = document.createElement("a");
-const menuLink = document.createElement("a");
-
-homeLink.href = "http://example.com";
-aboutLink.href = "http://example.com";
-menuLink.href = "http://example.com";
-
-main.classList.add("main");
+const nav = document.createElement("nav");
 nav.classList.add("nav_area");
 
-home.classList.add("nav_item", "home");
-about.classList.add("nav_item", "about");
-menu.classList.add("nav_item", "menu");
+const main = document.createElement("main");
+main.classList.add("main");
 
-homeLink.classList.add("nav_link", "home");
-aboutLink.classList.add("nav_link", "about");
-menuLink.classList.add("nav_link", "menu");
+function createNavItem(name, href) {
+    const navItem = document.createElement("div");
+    navItem.classList.add("nav_item", name);
 
-homeLink.textContent = "Home";
-aboutLink.textContent = "About";
-menuLink.textContent = "Menu";
+    const navLink = document.createElement("a");
+    navLink.classList.add("nav_link", name);
+    navLink.href = href;
+    navLink.textContent = name.charAt(0).toUpperCase() + name.slice(1);
+
+    navItem.appendChild(navLink);
+    return navItem;
+}
+
+nav.appendChild(createNavItem("home", "http://example.com"));
+nav.appendChild(createNavItem("about", "http://example.com"));
+nav.appendChild(createNavItem("menu", "http://example.com"));
+
+content.appendChild(nav);
 
 content.appendChild(main);
-main.appendChild(nav);
-nav.appendChild(home);
-nav.appendChild(about);
-nav.appendChild(menu);
-home.appendChild(homeLink);
-about.appendChild(aboutLink);
-menu.appendChild(menuLink);

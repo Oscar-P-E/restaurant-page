@@ -19,7 +19,7 @@ body,
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.main {
+#content {
     display: grid;
     grid-template-columns: 1fr 10fr;
     height: 100%;
