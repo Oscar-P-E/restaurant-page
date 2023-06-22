@@ -2,7 +2,6 @@
   "name": "restaurant-page",
   "version": "1.0.0",
   "description": "Using JavaScript alone to generate the entire contents of the website.",
-  "private": "true",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack"
